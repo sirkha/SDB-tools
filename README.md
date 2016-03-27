@@ -1,14 +1,23 @@
 SDB-tools
 =========
 
-Package manager and other tools for Source Distro BLUE
+Package manager and other tools for Source Distro BLUE.
+
+Executables
+-----------
+* green: fetch a package and change to the root directory to allow for changes
+   prior to building
+* blue: build, install and configure the specified package
+* black: fetch a package then build install and configure without making changes
+* red: uninstall a package
+* white: upgrade packages
 
 
 Source Distro BLUE
 ==================
 Concept
 -------
-Source Distro BLUE (SDB) will be built a minimal base system (such as the
+Source Distro BLUE (SDB) will be built around a minimal base system (such as the
 [LinuxFromScratch][1] completed build) and a set of generic source build
 scripts and binary installation scripts maintained on a public git repository
 
@@ -44,9 +53,10 @@ Base File System
 * /usr/sbd/ Directory in which the system Git Repositories, listed below, are
    stored.
 * /usr/src/ Repositories for each installed package are located here.
+* /usr/build/ A directory in which the build script keeps the output files of a
+   build for future use.
 * /var/build/ A temporary directory in which the build script checks out the 
    source from /usr/src/ and builds it.
-	   
 
 System Git Repositories
 -----------------------
@@ -67,6 +77,8 @@ selected on a per package basis in the JSON package set file.
    package. Files here will be the basis for what is in /etc and the user's home
    directory, if the package doesn't provide a default or the distro maintainers
    want to change it.
+* SDB-Tools: This repository contains the source for the package manager and other
+   required tools.
 
 Package Files
 -------------
@@ -128,5 +140,5 @@ Functions:
 
 <!--- References -->
 [1]: http://www.linuxfromscratch.org/lfs "Linux From Scratch"
-[2]: http://www.linuxfoundation.org/collaborate/workgroups/lsb/fhs-30-draft-1
+[2]: http://refspecs.linuxfoundation.org/fhs.shtml
     "Filesystem Hierarchy Standard" 
