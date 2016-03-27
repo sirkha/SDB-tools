@@ -20,7 +20,6 @@ Concept
 Source Distro BLUE (SDB) will be built around a minimal base system (such as the
 [LinuxFromScratch][1] completed build) and a set of generic source build
 scripts and binary installation scripts maintained on a public git repository
-
 with a list of scripts and options for those scripts for each package. Each user
 will have their own fork of the package description files and build scripts that
 they can optionally modify to suite their needs or switch to different upstreams
